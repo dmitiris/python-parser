@@ -1,5 +1,10 @@
 # python-parser
 
+### Условия
+Python 2.7.x и выше
+
+PostgreSQL 9.5 и выше
+
 ### Установка
 ##### Устанавливаем BeautifulSoup
 
