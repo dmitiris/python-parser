@@ -2,6 +2,8 @@ from re import compile as re_compile
 from requests import get as requests_get
 from bs4 import BeautifulSoup
 from psycopg2 import connect
+from time import sleep
+from random import choice
 
 
 URL_BASE = 'https://www.kinopoisk.ru'
@@ -45,6 +47,7 @@ def main():
         positive = int(movie_soup.find('li', {'class': 'pos'}).find('b').text)
         negative = int(movie_soup.find('li', {'class': 'neg'}).find('b').text)
         db_write((movie_name, movie_url, positive, negative))
+        sleep(choice(range(2, 4, 1)))
 
 
 if __name__ == '__main__':
